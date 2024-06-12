@@ -99,6 +99,7 @@ class BaseAnnotator(abc.ABC):
         is_raise_if_missing_primary_keys: bool = True,
         annotation_type: Optional[Type] = None,
         is_reapply_parsing: bool = False,
+        other_keys_to_keep: Sequence[str] = ()
     ):
         logging.info(f"Creating the annotator from `{annotators_config}`.")
         self.base_dir = Path(base_dir or self.DEFAULT_BASE_DIR)
